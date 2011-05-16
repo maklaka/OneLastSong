@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             this.btnGo = new System.Windows.Forms.Button();
             this.txtTime = new System.Windows.Forms.TextBox();
             this.timTimer = new System.Windows.Forms.Timer(this.components);
@@ -169,6 +170,7 @@
             this.Controls.Add(this.txtTime);
             this.Controls.Add(this.btnGo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "frmMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
