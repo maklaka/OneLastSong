@@ -28,7 +28,7 @@ namespace OneLastSong
         private void OnLoad(object sender, EventArgs e)
         {
             Time.Focus();
-            cmbOption.SelectedIndex = 0;
+            Options.SelectedIndex = 0;
         }
 
         private void OnGoClick(object sender, EventArgs e)
@@ -61,7 +61,7 @@ namespace OneLastSong
                 Thread.Sleep(1000);
             }
 
-            var command = CommandMap[cmbOption.SelectedIndex];
+            var command = CommandMap[Options.SelectedIndex];
             command.Execute();
         }
 

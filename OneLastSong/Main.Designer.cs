@@ -33,7 +33,7 @@
             this.btnGo = new System.Windows.Forms.Button();
             this.Time = new System.Windows.Forms.TextBox();
             this.Timer = new System.Windows.Forms.Timer(this.components);
-            this.cmbOption = new System.Windows.Forms.ComboBox();
+            this.Options = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -69,20 +69,20 @@
             this.Timer.Interval = 1000;
             this.Timer.Tick += new System.EventHandler(this.OnTimerTick);
             // 
-            // cmbOption
+            // Options
             // 
-            this.cmbOption.CausesValidation = false;
-            this.cmbOption.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbOption.FormattingEnabled = true;
-            this.cmbOption.Items.AddRange(new object[] {
+            this.Options.CausesValidation = false;
+            this.Options.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.Options.FormattingEnabled = true;
+            this.Options.Items.AddRange(new object[] {
             "Hibernate",
             "Shut Down",
             "Stand-by",
             "Restart (for some reason...)"});
-            this.cmbOption.Location = new System.Drawing.Point(47, 54);
-            this.cmbOption.Name = "cmbOption";
-            this.cmbOption.Size = new System.Drawing.Size(154, 21);
-            this.cmbOption.TabIndex = 1;
+            this.Options.Location = new System.Drawing.Point(47, 54);
+            this.Options.Name = "Options";
+            this.Options.Size = new System.Drawing.Size(154, 21);
+            this.Options.TabIndex = 1;
             // 
             // label1
             // 
@@ -166,7 +166,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.cmbOption);
+            this.Controls.Add(this.Options);
             this.Controls.Add(this.Time);
             this.Controls.Add(this.btnGo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -186,7 +186,7 @@
         private System.Windows.Forms.Button btnGo;
         private System.Windows.Forms.TextBox Time;
         private System.Windows.Forms.Timer Timer;
-        private System.Windows.Forms.ComboBox cmbOption;
+        private System.Windows.Forms.ComboBox Options;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
