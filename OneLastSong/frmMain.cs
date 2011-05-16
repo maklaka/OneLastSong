@@ -28,26 +28,24 @@ namespace OneLastSong
 
         private void frmMain_Load(object sender, EventArgs e)
         {
-            txtTime.Focus();
+            Time.Focus();
             cmbOption.SelectedIndex = 0;
         }
 
         private void btnGo_Click(object sender, EventArgs e)
         {
-            if (txtTime.Text.IsEmpty() || !txtTime.Text.IsPositiveNumber())
+            if (Time.Text.IsEmpty() || !Time.Text.IsPositiveNumber())
             {
                 MessageBox.Show("No deal, enter a number of minutes please.", "Try again.", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return;
             }
             
-            timTimer.Stop();
-            double temp = Convert.ToDouble(txtTime.Text);
-            minutes = seconds = 0;
-            minutes = (int)temp;
-            seconds = (int)(60.0 * (temp - minutes));
+            Timer.Stop();
+            minutes = (int)double.Parse(Time.Text);
+            seconds = (int)(60.0 * (double.Parse(Time.Text) - minutes));
             SetLabel(minutes, seconds);
             btnFiveMore.Enabled = true;
-            timTimer.Start();
+            Timer.Start();
         }
 
         private void btnFiveMore_Click(object sender, EventArgs e)
@@ -82,7 +80,7 @@ namespace OneLastSong
                 seconds = 60;
                 if (minutes < 0)
                 {
-                    timTimer.Stop();
+                    Timer.Stop();
                     PerformTask();
                     return;
                 }

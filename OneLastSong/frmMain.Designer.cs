@@ -31,8 +31,8 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             this.btnGo = new System.Windows.Forms.Button();
-            this.txtTime = new System.Windows.Forms.TextBox();
-            this.timTimer = new System.Windows.Forms.Timer(this.components);
+            this.Time = new System.Windows.Forms.TextBox();
+            this.Timer = new System.Windows.Forms.Timer(this.components);
             this.cmbOption = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -54,20 +54,20 @@
             this.btnGo.UseVisualStyleBackColor = true;
             this.btnGo.Click += new System.EventHandler(this.btnGo_Click);
             // 
-            // txtTime
+            // Time
             // 
-            this.txtTime.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtTime.Location = new System.Drawing.Point(47, 11);
-            this.txtTime.Multiline = true;
-            this.txtTime.Name = "txtTime";
-            this.txtTime.Size = new System.Drawing.Size(154, 25);
-            this.txtTime.TabIndex = 0;
-            this.txtTime.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.Time.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.Time.Location = new System.Drawing.Point(47, 11);
+            this.Time.Multiline = true;
+            this.Time.Name = "Time";
+            this.Time.Size = new System.Drawing.Size(154, 25);
+            this.Time.TabIndex = 0;
+            this.Time.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // timTimer
+            // Timer
             // 
-            this.timTimer.Interval = 1000;
-            this.timTimer.Tick += new System.EventHandler(this.timTimer_Tick);
+            this.Timer.Interval = 1000;
+            this.Timer.Tick += new System.EventHandler(this.timTimer_Tick);
             // 
             // cmbOption
             // 
@@ -167,7 +167,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cmbOption);
-            this.Controls.Add(this.txtTime);
+            this.Controls.Add(this.Time);
             this.Controls.Add(this.btnGo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -184,8 +184,8 @@
         #endregion
 
         private System.Windows.Forms.Button btnGo;
-        private System.Windows.Forms.TextBox txtTime;
-        private System.Windows.Forms.Timer timTimer;
+        private System.Windows.Forms.TextBox Time;
+        private System.Windows.Forms.Timer Timer;
         private System.Windows.Forms.ComboBox cmbOption;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
