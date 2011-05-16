@@ -16,9 +16,7 @@ namespace OneLastSong
             { 3, new Restart() },
         };
 
-        //Time tracking vars
-        private int minutes;
-        private int seconds;
+        private Countdown countdown;
 
         public Main()
         {
@@ -38,61 +36,45 @@ namespace OneLastSong
                 MessageBox.Show("No deal, enter a number of minutes please.", "Try again.", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return;
             }
-            
-            Timer.Stop();
-            minutes = (int)double.Parse(Time.Text);
-            seconds = (int)(60.0 * (double.Parse(Time.Text) - minutes));
-            SetLabel(minutes, seconds);
+
+            if(countdown != null)
+            {
+                countdown.Stop();
+                countdown.Tick -= SetTimeRemaining;
+                countdown.Expired -= ExecuteCommand;
+            }
+
+            countdown = Countdown.FromMinutes(double.Parse(Time.Text));
+            countdown.Tick += SetTimeRemaining;
+            countdown.Expired += ExecuteCommand;
+            countdown.Start();
+
             FiveMoreMinutes.Enabled = true;
-            Timer.Start();
+
+            SetTimeRemaining();
         }
 
-        private void OnFiveMoreMinutesClick(object sender, EventArgs e)
-        {
-            minutes += 5;
-            SetLabel(minutes, seconds);
-        }
-
-        private void PerformTask()
+        private void ExecuteCommand()
         {
             if (DisableMonitor.Checked)
             {
                 new PowerOffMonitor(Handle).Execute();
-                Thread.Sleep(1000);
+                Thread.Sleep(TimeSpan.FromSeconds(1));
             }
-
+            
             var command = CommandMap[Options.SelectedIndex];
             command.Execute();
         }
 
-        private void OnTimerTick(object sender, EventArgs e)
+        private void SetTimeRemaining()
         {
-            if (seconds == 0)
-            {
-                minutes--;
-                seconds = 60;
-                if (minutes < 0)
-                {
-                    Timer.Stop();
-                    PerformTask();
-                    return;
-                }
-            }
-
-            seconds--;
-            SetLabel(minutes, seconds);
+            TimeRemaining.Text = string.Format("{0:00}:{1:00}", countdown.TimeRemaining.Minutes, countdown.TimeRemaining.Seconds);
         }
 
-        private void SetLabel(int mins, int secs)
+        private void OnFiveMoreMinutesClick(object sender, EventArgs e)
         {
-            string ss = "";
-            string ms = "";
-            if(secs < 10)
-                ss = "0";
-            if (mins < 10)
-                ms = "0";
-
-            lblCountDown.Text = ms + minutes + ":" + ss + secs;
+            countdown.IncreaseDuration(TimeSpan.FromMinutes(5));
+            SetTimeRemaining();
         }
     }
 }

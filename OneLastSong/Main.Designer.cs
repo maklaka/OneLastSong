@@ -28,17 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             this.btnGo = new System.Windows.Forms.Button();
             this.Time = new System.Windows.Forms.TextBox();
-            this.Timer = new System.Windows.Forms.Timer(this.components);
             this.Options = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.lblCountDown = new System.Windows.Forms.Label();
+            this.TimeRemaining = new System.Windows.Forms.Label();
             this.FiveMoreMinutes = new System.Windows.Forms.Button();
             this.DisableMonitor = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
@@ -64,11 +62,6 @@
             this.Time.TabIndex = 0;
             this.Time.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // Timer
-            // 
-            this.Timer.Interval = 1000;
-            this.Timer.Tick += new System.EventHandler(this.OnTimerTick);
-            // 
             // Options
             // 
             this.Options.CausesValidation = false;
@@ -76,8 +69,8 @@
             this.Options.FormattingEnabled = true;
             this.Options.Items.AddRange(new object[] {
             "Hibernate",
-            "Shut Down",
-            "Stand-by",
+            "Shut down",
+            "Standby",
             "Restart (for some reason...)"});
             this.Options.Location = new System.Drawing.Point(47, 54);
             this.Options.Name = "Options";
@@ -120,15 +113,15 @@
             this.label4.TabIndex = 6;
             this.label4.Text = "my PC";
             // 
-            // lblCountDown
+            // TimeRemaining
             // 
-            this.lblCountDown.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCountDown.Location = new System.Drawing.Point(5, 176);
-            this.lblCountDown.Name = "lblCountDown";
-            this.lblCountDown.Size = new System.Drawing.Size(244, 25);
-            this.lblCountDown.TabIndex = 7;
-            this.lblCountDown.Text = "00:00";
-            this.lblCountDown.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.TimeRemaining.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TimeRemaining.Location = new System.Drawing.Point(5, 176);
+            this.TimeRemaining.Name = "TimeRemaining";
+            this.TimeRemaining.Size = new System.Drawing.Size(244, 25);
+            this.TimeRemaining.TabIndex = 7;
+            this.TimeRemaining.Text = "00:00";
+            this.TimeRemaining.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // FiveMoreMinutes
             // 
@@ -161,7 +154,7 @@
             this.ClientSize = new System.Drawing.Size(253, 233);
             this.Controls.Add(this.DisableMonitor);
             this.Controls.Add(this.FiveMoreMinutes);
-            this.Controls.Add(this.lblCountDown);
+            this.Controls.Add(this.TimeRemaining);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -185,13 +178,12 @@
 
         private System.Windows.Forms.Button btnGo;
         private System.Windows.Forms.TextBox Time;
-        private System.Windows.Forms.Timer Timer;
         private System.Windows.Forms.ComboBox Options;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label lblCountDown;
+        private System.Windows.Forms.Label TimeRemaining;
         private System.Windows.Forms.Button FiveMoreMinutes;
         private System.Windows.Forms.CheckBox DisableMonitor;
     }
