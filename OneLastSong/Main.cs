@@ -43,7 +43,7 @@ namespace OneLastSong
             minutes = (int)double.Parse(Time.Text);
             seconds = (int)(60.0 * (double.Parse(Time.Text) - minutes));
             SetLabel(minutes, seconds);
-            btnFiveMore.Enabled = true;
+            FiveMoreMinutes.Enabled = true;
             Timer.Start();
         }
 
