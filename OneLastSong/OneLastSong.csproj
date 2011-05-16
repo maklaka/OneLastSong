@@ -64,7 +64,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Extensions.cs" />
+    <Compile Include="Countdown.cs" />
+    <Compile Include="NumberExtensions.cs" />
     <Compile Include="Commands\ICommand.cs" />
     <Compile Include="Main.cs">
       <SubType>Form</SubType>
@@ -89,19 +90,11 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <None Include="Properties\Settings.settings">
-      <Generator>SettingsSingleFileGenerator</Generator>
-      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
-    </None>
-    <Compile Include="Properties\Settings.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Settings.settings</DependentUpon>
-      <DesignTimeSharedInput>True</DesignTimeSharedInput>
-    </Compile>
     <Compile Include="Commands\Restart.cs" />
     <Compile Include="Commands\Shutdown.cs" />
     <Compile Include="Commands\Standby.cs" />
     <Compile Include="Commands\Hibernate.cs" />
+    <Compile Include="ThreadExtensions.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Resources\clef.ico" />

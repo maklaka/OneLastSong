@@ -2,7 +2,7 @@
 
 namespace OneLastSong
 {
-    public static class Extensions
+    public static class NumberExtensions
     {
         public const NumberStyles PositiveNumber = NumberStyles.Number ^ NumberStyles.AllowLeadingSign;
 

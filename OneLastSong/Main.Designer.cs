@@ -39,7 +39,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.lblCountDown = new System.Windows.Forms.Label();
-            this.btnFiveMore = new System.Windows.Forms.Button();
+            this.FiveMoreMinutes = new System.Windows.Forms.Button();
             this.DisableMonitor = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
@@ -130,16 +130,16 @@
             this.lblCountDown.Text = "00:00";
             this.lblCountDown.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // btnFiveMore
+            // FiveMoreMinutes
             // 
-            this.btnFiveMore.Enabled = false;
-            this.btnFiveMore.Location = new System.Drawing.Point(5, 205);
-            this.btnFiveMore.Name = "btnFiveMore";
-            this.btnFiveMore.Size = new System.Drawing.Size(244, 23);
-            this.btnFiveMore.TabIndex = 4;
-            this.btnFiveMore.Text = "Add 5 Minutes";
-            this.btnFiveMore.UseVisualStyleBackColor = true;
-            this.btnFiveMore.Click += new System.EventHandler(this.OnFiveMoreMinutesClick);
+            this.FiveMoreMinutes.Enabled = false;
+            this.FiveMoreMinutes.Location = new System.Drawing.Point(5, 205);
+            this.FiveMoreMinutes.Name = "FiveMoreMinutes";
+            this.FiveMoreMinutes.Size = new System.Drawing.Size(244, 23);
+            this.FiveMoreMinutes.TabIndex = 4;
+            this.FiveMoreMinutes.Text = "Add 5 Minutes";
+            this.FiveMoreMinutes.UseVisualStyleBackColor = true;
+            this.FiveMoreMinutes.Click += new System.EventHandler(this.OnFiveMoreMinutesClick);
             // 
             // DisableMonitor
             // 
@@ -160,7 +160,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(253, 233);
             this.Controls.Add(this.DisableMonitor);
-            this.Controls.Add(this.btnFiveMore);
+            this.Controls.Add(this.FiveMoreMinutes);
             this.Controls.Add(this.lblCountDown);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -192,7 +192,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label lblCountDown;
-        private System.Windows.Forms.Button btnFiveMore;
+        private System.Windows.Forms.Button FiveMoreMinutes;
         private System.Windows.Forms.CheckBox DisableMonitor;
     }
 }
