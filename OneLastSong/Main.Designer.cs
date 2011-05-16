@@ -1,6 +1,6 @@
 ﻿namespace OneLastSong
 {
-    partial class frmMain
+    partial class Main
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             this.btnGo = new System.Windows.Forms.Button();
             this.Time = new System.Windows.Forms.TextBox();
             this.Timer = new System.Windows.Forms.Timer(this.components);
@@ -40,7 +40,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.lblCountDown = new System.Windows.Forms.Label();
             this.btnFiveMore = new System.Windows.Forms.Button();
-            this.chkMonitor = new System.Windows.Forms.CheckBox();
+            this.DisableMonitor = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // btnGo
@@ -52,7 +52,7 @@
             this.btnGo.TabIndex = 3;
             this.btnGo.Text = "Start";
             this.btnGo.UseVisualStyleBackColor = true;
-            this.btnGo.Click += new System.EventHandler(this.btnGo_Click);
+            this.btnGo.Click += new System.EventHandler(this.OnGoClick);
             // 
             // Time
             // 
@@ -67,7 +67,7 @@
             // Timer
             // 
             this.Timer.Interval = 1000;
-            this.Timer.Tick += new System.EventHandler(this.timTimer_Tick);
+            this.Timer.Tick += new System.EventHandler(this.OnTimerTick);
             // 
             // cmbOption
             // 
@@ -139,27 +139,27 @@
             this.btnFiveMore.TabIndex = 4;
             this.btnFiveMore.Text = "Add 5 Minutes";
             this.btnFiveMore.UseVisualStyleBackColor = true;
-            this.btnFiveMore.Click += new System.EventHandler(this.btnFiveMore_Click);
+            this.btnFiveMore.Click += new System.EventHandler(this.OnFiveMoreMinutesClick);
             // 
-            // chkMonitor
+            // DisableMonitor
             // 
-            this.chkMonitor.AutoSize = true;
-            this.chkMonitor.Checked = true;
-            this.chkMonitor.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chkMonitor.Location = new System.Drawing.Point(53, 84);
-            this.chkMonitor.Name = "chkMonitor";
-            this.chkMonitor.Size = new System.Drawing.Size(134, 17);
-            this.chkMonitor.TabIndex = 2;
-            this.chkMonitor.Text = "Turn off my monitor too";
-            this.chkMonitor.UseVisualStyleBackColor = true;
+            this.DisableMonitor.AutoSize = true;
+            this.DisableMonitor.Checked = true;
+            this.DisableMonitor.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.DisableMonitor.Location = new System.Drawing.Point(53, 84);
+            this.DisableMonitor.Name = "DisableMonitor";
+            this.DisableMonitor.Size = new System.Drawing.Size(134, 17);
+            this.DisableMonitor.TabIndex = 2;
+            this.DisableMonitor.Text = "Turn off my monitor too";
+            this.DisableMonitor.UseVisualStyleBackColor = true;
             // 
-            // frmMain
+            // Main
             // 
             this.AcceptButton = this.btnGo;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(253, 233);
-            this.Controls.Add(this.chkMonitor);
+            this.Controls.Add(this.DisableMonitor);
             this.Controls.Add(this.btnFiveMore);
             this.Controls.Add(this.lblCountDown);
             this.Controls.Add(this.label4);
@@ -172,10 +172,10 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.Name = "frmMain";
+            this.Name = "Main";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "One Last Song by MJones";
-            this.Load += new System.EventHandler(this.frmMain_Load);
+            this.Load += new System.EventHandler(this.OnLoad);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -193,7 +193,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label lblCountDown;
         private System.Windows.Forms.Button btnFiveMore;
-        private System.Windows.Forms.CheckBox chkMonitor;
+        private System.Windows.Forms.CheckBox DisableMonitor;
     }
 }
 
