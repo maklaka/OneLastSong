@@ -1,0 +1,2 @@
+# One Last Song
+Ever want your PC to shut off while you fall asleep to streaming video or music? I know I do... so I made this. This program lets you punch in a time to elapse before it sleeps, hibernates, or shuts down. Test it for me, lemme know if you like it!
